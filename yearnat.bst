@@ -1391,7 +1391,7 @@ FUNCTION {reverse.pass}
 
 EXECUTE {initialize.longest.label}
 
-ITERATE {forward.pass}
+REVERSE {forward.pass}
 
 REVERSE {reverse.pass}
 
@@ -1399,7 +1399,7 @@ FUNCTION {bib.sort.order}
 { sort.label  'sort.key$ :=
 }
 
-ITERATE {bib.sort.order}
+REVERSE {bib.sort.order}
 
 SORT
 
@@ -1426,7 +1426,7 @@ EXECUTE {begin.bib}
 
 EXECUTE {init.state.consts}
 
-ITERATE {call.type$}
+REVERSE {call.type$}
 
 FUNCTION {end.bib}
 { newline$
