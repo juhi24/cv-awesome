@@ -233,6 +233,9 @@
 \newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{lighttext} #1}}
 
+% Orcid icon
+\newcommand*{\orcidblack}{\includegraphics[height=1.1\fontcharht\font`\j]{orcid_icon}}
+
 
 %-------------------------------------------------------------------------------
 %                Commands for personal information
@@ -314,6 +317,10 @@
 % Defines writer's reddit (optional)
 % Usage: \reddit{<reddit account>}
 \newcommand*{\reddit}[1]{\def\@reddit{#1}}
+
+% Defines writer's orcid (optional)
+% Usage: \orcid{<orcid id>}
+\newcommand*{\orcid}[1]{\def\@orcid{#1}}
 
 % Defines writer's xing (optional)
 % Usage: \xing{<xing name>}
@@ -514,6 +521,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+        }%
+      \ifthenelse{\isundefined{\@orcid}}%
+        {}%
+        {%
+    	  \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+    	  \href{https://orcid.org/\@orcid}{\orcidblack\acvHeaderIconSep orcid.org/\@orcid}%
         }%
       \ifthenelse{\isundefined{\@xing}}%
         {}%
